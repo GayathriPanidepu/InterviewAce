@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INterviewAce</title>
+  <link rel="stylesheet" href="../static/home.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+   <div class="homepage-container">
+  <header>
+    <nav class="navbar">
+      <!-- Logo Section -->
+      <div class="logo">
+        <img src="../static/images/inter.png" alt="Logo">
+        <span>INterviewAce</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="{{ url_for('login') }}" class="btn">Login</a></li>
+        <li><a href="{{ url_for('signup') }}" class="btn">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 class="hero-heading">Prepare for Success</h1>
+      <p class="hero-description">Your ultimate platform for job interview preparation and skill building.</p>
+      <a href="#features" class="btn">Get Started</a>
+    </div>
+  </section>
+</div>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <h2>Features</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <h3>Mock Interviews</h3>
+        <p>Simulate real interviews to gain confidence.</p>
+      </div>
+      <div class="card">
+        <h3>AI Feedback</h3>
+        <p>Get detailed insights on your answers and skills.</p>
+      </div>
+      <div class="card">
+        <h3>Skills development</h3>
+        <p>Learn skills based on your requirement.</p>
+      </div>
+      <div class="card">
+        <h3>Video Recording</h3>
+        <p>Review your performance and make adjustments with video recording tools.</p>
+    </div>
+    <div class="card">
+        <h3>Gamification</h3>
+        <p>Earn badges and climb leaderboards to stay motivated and track your progress.</p>
+    </div>
+    <div class="card">
+        <h3>Collaboration Tools</h3>
+        <p>Engage in peer-to-peer mock interviews and exchange feedback.</p>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 INterviewAce. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>

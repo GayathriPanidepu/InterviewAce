@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Skills Development Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .section-block {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f2f5;
+        }
+
+        .section-icon img {
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+        }
+
+        .section-content {
+            padding: 1rem 0;
+        }
+
+        .skill-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .skill-item {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateX(10px);
+            color: #4f46e5;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 0;
+            height: 100%;
+            background: #4f46e5;
+            transition: width 0.5s ease;
+        }
+
+        .section-block:hover .progress {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .sections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Interactive Skills Development</h1>
+            <p>Explore different domains to enhance your professional capabilities</p>
+        </header>
+
+        <div class="sections-grid">
+            <!-- Aptitude Section -->
+            <div class="section-block" onclick="window.location.href='aptitude/numerical-ability.html'">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2641/2641457.png" alt="Aptitude">
+                    </div>
+                    <h2>Aptitude & Reasoning</h2>
+                </div>
+                <div class="section-content">
+                    <p>Develop your analytical and logical reasoning abilities</p>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="aptitude/numerical-ability.html">Numerical Ability</a>
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="aptitude/logical-reasoning.html">Logical Reasoning</a>
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="aptitude/data-interpretation.html">Data Interpretation</a>
+                        </li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem Solving Section -->
+            <div class="section-block" onclick="window.location.href='problem-solving/critical-thinking.html'">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/128/4133/4133589.png" alt="Problem Solving">
+                    </div>
+                    <h2>Problem Solving</h2>
+                </div>
+                <div class="section-content">
+                    <p>Master strategic thinking and solution development</p>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="{{ url_for('critical') }}">Critical Thinking</a>
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="problem-solving/decision-making.html">Decision Making</a>
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="problem-solving/strategic-planning.html">Strategic Planning</a>
+                        </li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Communication Section -->
+            <div class="section-block" onclick="window.location.href='communication/public-speaking.html'">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1535/1535012.png" alt="Communication">
+                    </div>
+                    <h2>Communication Skills</h2>
+                </div>
+                <div class="section-content">
+                    <p>Enhance your verbal and non-verbal communication</p>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="communication/public-speaking.html">Public Speaking</a>
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="communication/business-writing.html">Business Writing</a>
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="communication/presentation-skills.html">Presentation Skills</a>
+                        </li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collaboration Section -->
+            <div class="section-block" onclick="window.location.href='collaboration/team-management.html'">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1534/1534938.png" alt="Collaboration">
+                    </div>
+                    <h2>Collaboration</h2>
+                </div>
+                <div class="section-content">
+                    <p>Learn effective teamwork and leadership skills</p>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="collaboration/team-management.html">Team Management</a>
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="collaboration/leadership.html">Leadership</a>
+                        </li>
+                        <li class="skill-item">
+                            <i class="fas fa-check-circle"></i>
+                            <a href="collaboration/conflict-resolution.html">Conflict Resolution</a>
+                        </li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

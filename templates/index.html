@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Interview & Skills Development</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #27291d 0%, #d5add2 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .header {
+            animation: slideIn 1s ease-out;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 3em;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header p {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 24px;
+            margin: 30px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+        }
+        
+        .domain-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            perspective: 1000px;
+        }
+        
+        .domain-card {
+            width: 300px;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            box-shadow: 
+                0 10px 20px rgba(0,0,0,0.1),
+                0 6px 6px rgba(0,0,0,0.05);
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        
+        .domain-card:hover {
+            transform: scale(1.05) rotateX(10deg) rotateY(10deg);
+            box-shadow: 
+                0 15px 30px rgba(0,0,0,0.15),
+                0 10px 10px rgba(0,0,0,0.1);
+        }
+        
+        .domain-card h2 {
+            background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .domain-card:hover h2 {
+            transform: scale(1.1);
+        }
+        
+        .domain-icon {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .domain-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .header p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Job Interview & Skills Development</h1>
+        <p>Your Path to Professional Excellence</p>
+    </div>
+    
+    <div class="domain-container">
+        <a href="{{ url_for('jobinterview') }}">
+        <div class="domain-card">
+            <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                <line x1="12" y1="12" x2="16" y2="12"/>
+            </svg>
+        </a>
+            <h2>Job Interview</h2>
+        </div>
+        <a href="{{ url_for('developskills') }}">
+        <div class="domain-card" >
+            <svg class="domain-icon" viewBox="0 0 24 24" fill="none" stroke="#4ecdc4" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <polyline points="17 11 19 13 23 9"/>
+            </svg>
+        </a>
+            <h2>Develop Skills</h2>
+        </div>
+    </div>
+    
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .homepage-container{
+    background-image: url('./images/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+ 
+
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Separate logo and links */
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Adds space between image and text */
+    z-index: 2;
+  }
+  
+  .navbar .logo img {
+    width: 50px; /* Adjust the size of the logo */
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
+  }
+  
+  .navbar .logo span {
+    font-size: 3rem;
+    font-weight: bold;
+    color:#0012d6;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Adding text shadow to logo text */
+    z-index: 2;
+    text-shadow: none;
+    position: relative;
+
+  }
+  .navbar .logo span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.2rem; /* Adds padding around the text */
+  }
+  
+  .navbar .logo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    z-index: 1; /* Ensure the overlay is behind the logo content */
+  }
+  
+  .navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    z-index: 2;
+  }
+  
+  .navbar .nav-links li {
+    display: inline;
+  }
+  
+  .navbar .nav-links a {
+    color: white;
+    font-size: 1.1rem; 
+    text-decoration: none;
+    transition: color 0.3s;
+    z-index: 2;
+  }
+  
+  .navbar .nav-links a:hover {
+    color: #ffd700;
+  }
+  
+  .navbar .btn {
+    padding: 0.5rem 1rem;
+    background-color: #ffd700;
+    color: #0056d6;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    z-index: 2;
+  }
+  
+  .navbar .btn:hover {
+    background-color: white;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    background-attachment: fixed;  /* Creates a parallax effect */
+    position: relative;
+    z-index: 1;
+
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensure the overlay is behind the text */
+  }
+  
+  
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .hero-content {
+    z-index: 2;
+    opacity: 0;
+   transform: translateY(50px);
+   animation: fadeInUp 1.5s forwards 0.5s; /* Fades in with upward movement */
+   
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .hero-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: typing 3.5s steps(30) 1s 1 normal forwards, blink 0.75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); 
+  }
+  
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 3s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); 
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .hero .btn {
+    padding: 1rem 2rem;
+    background-color: #ffd700;
+    color: #0056d6;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+  }
+  
+  .hero .btn:hover {
+    background-color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+    
+  /* Features Section */
+  .features {
+    background: #f4f4f4;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  }
+  
+  .card {
+    background: white;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+
+  }
+  .card:hover {
+    transform: translateY(-10px); /* Moves the card up when hovered */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a shadow effect when hovered */
+  }
+  
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Footer */
+  footer {
+    background: #0056d6;
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+  
+  footer .social-links a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: none;
+  }
+  
+  footer .social-links a:hover {
+    text-decoration: underline;
+  }
+  
